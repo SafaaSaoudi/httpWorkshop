@@ -17,13 +17,14 @@ export class OffreComponent {
   constructor(private R: Router, private productS:ProductService){}
 
 ngOnInit(): void {
-
-  for(let p of this.productS.listProdcut){
+  this.productS.getAllProducts().subscribe( data  =>{
+  for(let p of data){
    
    if (p.price < 20 ){
      this.list.push(p)
      }
   }
+});
 }
 
   Buy(P:Product){

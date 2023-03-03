@@ -12,15 +12,13 @@ import { ProductService } from '../services/product.service';
 export class ProductsComponent implements OnInit {
     
     list!:Product[];
-
     prix!:number;
    
     constructor(private R: Router, private productS:ProductService){}
 
 ngOnInit(): void {
-  this.list=this.productS.listProdcut;
+  this.productS.getAllProducts().subscribe( data => this.list=data);
 }
-
     Buy(P:Product){
      // if( P.quantity>0){
         P.quantity--;
@@ -37,6 +35,6 @@ this.R.navigate(['productDetails', id]);
     }
 
     search(){
-   alert(this.productS.numberProducts(this.list,"like",0));
+   //alert(this.productS.numberProducts(this.list,"like",0));
     }
 }

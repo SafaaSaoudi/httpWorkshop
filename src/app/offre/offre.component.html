@@ -1,0 +1,22 @@
+<h2 class="center container"> List Products</h2>
+search: <input type="text" [(ngModel)]="prix">
+<section  *ngFor="let P of list, let i=index"  >
+   
+   <div  *ngIf="P.price <= prix || !prix"        class="card" style="width: 18rem;"  >
+    <img class="card-img-top" src="../../assets/download.jfif" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{P.title}}</h5>
+      <h5>{{P.price}}</h5>
+      <button class="btn btn-primary"  (click)="Buy(P)"  [disabled]="P.quantity==0">Buy</button>
+      <button class="btn btn-primary"  (click)="Like(P)" >Like</button>
+      <button class="btn btn-primary"  (click)="showDetails(P.id)" >Details</button>
+      <button [routerLink]="['/productDetails',P.id, i]">Show Details</button>
+    </div>
+  </div>
+</section>
+
+<section>
+ <button class="btn btn-primary"  routerLink="/addProduct"  >Add New Product</button> 
+</section>
+
+<button (click)="search()">show likes</button>

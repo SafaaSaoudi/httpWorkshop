@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { OffreComponent } from './offre/offre.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OffreComponent } from './offre/offre.component';
     ContactComponent,
     NotfoundComponent,
     AddProductComponent,
-    OffreComponent
+    OffreComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

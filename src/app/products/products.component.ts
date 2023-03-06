@@ -37,4 +37,11 @@ this.R.navigate(['productDetails', id]);
     search(){
    //alert(this.productS.numberProducts(this.list,"like",0));
     }
+
+    Delete(p:Product){
+      this.productS.deleteProduct(p.id).subscribe(() => {
+        alert('deleted');
+        this.productS.getAllProducts().subscribe( data => this.list=data);}
+      );
+    }
 }
